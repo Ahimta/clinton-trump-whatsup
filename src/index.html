@@ -1,33 +1,134 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>FountainJS</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png" />
-  
-    <!-- build:css(.tmp) index.css -->
-    <link rel="stylesheet" href="index.css"></link>
-    <!-- endbuild -->
-  </head>
+<html lang="en" manifest="app.manifest">
+<head>
+  <meta charset="utf-8">
+  <title>Clinton, Trump, what's up</title>
+  <meta name="description" content="Latest news articles from the CNN about Clinton and Trump">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#337ab7">
+  <meta name="msapplication-TileColor" content="#337ab7">
+  <link rel="canonical" href="http://ctw.getforge.io/">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="app/favicon.ico">
 
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <div id="root"></div>
-  </body>
-
-  <!-- build:js(.tmp) index.js -->
-  <script src="jspm_packages/system.js"></script>
-  <script src="jspm.browser.js"></script>
-  <script src="jspm.config.js"></script>
-
-  <script>
-    System.import('src/index.tsx');
+  <!-- Ensure only http is used to prevent mixed-content errors -->
+  <script type="text/javascript">
+    if (window.location.protocol === 'https:') {
+      window.location.protocol = 'http'
+    }
   </script>
-  <!-- endbuild -->
+
+  <!-- Inlined stylesheet for spinner; appears first, while app is still loading-->
+  <style>
+    .loader {
+      left: 50%;
+      top: 50%;
+      position: fixed;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+      .loader #spinner {
+        box-sizing: border-box;
+        stroke: #673AB7;
+        stroke-width: 3px;
+        -webkit-transform-origin: 50%;
+                transform-origin: 50%;
+        -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+                animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite; }
+
+    @-webkit-keyframes rotate {
+      from {
+        -webkit-transform: rotate(0);
+                transform: rotate(0); }
+      to {
+        -webkit-transform: rotate(450deg);
+                transform: rotate(450deg); } }
+
+    @keyframes rotate {
+      from {
+        -webkit-transform: rotate(0);
+                transform: rotate(0); }
+      to {
+        -webkit-transform: rotate(450deg);
+                transform: rotate(450deg); } }
+
+    @-webkit-keyframes line {
+      0% {
+        stroke-dasharray: 2, 85.964;
+        -webkit-transform: rotate(0);
+                transform: rotate(0); }
+      50% {
+        stroke-dasharray: 65.973, 21.9911;
+        stroke-dashoffset: 0; }
+      100% {
+        stroke-dasharray: 2, 85.964;
+        stroke-dashoffset: -65.973;
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); } }
+
+    @keyframes line {
+      0% {
+        stroke-dasharray: 2, 85.964;
+        -webkit-transform: rotate(0);
+                transform: rotate(0); }
+      50% {
+        stroke-dasharray: 65.973, 21.9911;
+        stroke-dashoffset: 0; }
+      100% {
+        stroke-dasharray: 2, 85.964;
+        stroke-dashoffset: -65.973;
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); } }
+  </style>
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    </p>
+  <![endif]-->
+
+  <noscript>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>      to improve your experience.
+    </p>
+  </noscript>
+
+  <!-- Show spinner first, while app still loading; it gets replaced by React with the app content, later -->
+  <div id="root">
+    <div class="loader">
+      <svg viewBox="0 0 32 32" width="32" height="32">
+        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+      </svg>
+    </div>
+  </div>
+</body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- build:css(.tmp) index.css -->
+<link rel="stylesheet" href="index.css"></link>
+<!-- endbuild -->
+
+<!-- build:js(.tmp) index.js -->
+<script src="jspm_packages/system.js"></script>
+<script src="jspm.browser.js"></script>
+<script src="jspm.config.js"></script>
+
+<script>
+  System.import('src/index.tsx');
+</script>
+<!-- endbuild -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49010546-8', 'auto');
+  ga('send', 'pageview');
+</script>
 </html>
 
