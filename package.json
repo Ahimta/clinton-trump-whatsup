@@ -84,7 +84,9 @@
   "homepage": "https://github.com/Ahimta/clinton-trump-whatsup#readme",
   "jspm": {
     "dependencies": {
-      "react-dom": "npm:react-dom@^15.0.1",
+      "bootstrap": "github:twbs/bootstrap@^3.3.7",
+      "es6-promise": "npm:es6-promise@^4.0.5",
+      "react-bootstrap": "npm:react-bootstrap@^0.30.7",
       "babel-polyfill": "npm:babel-polyfill@^6.7.4",
       "ts": "github:frankwallis/plugin-typescript@5.1.2"
     },
@@ -109,6 +111,7 @@
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
       "react": "npm:react@^15.0.1",
+      "react-dom": "npm:react-dom@^15.0.1",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
@@ -117,6 +120,27 @@
       "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
     },
     "overrides": {
+      "github:twbs/bootstrap@3.3.7": {
+        "main": "js/bootstrap.js",
+        "dependencies": {
+          "jquery": "jspm:jquery@*"
+        },
+        "files": [
+          "dist",
+          "fonts",
+          "js",
+          "css"
+        ],
+        "meta": {
+          "js/bootstrap.js": {
+            "deps": [
+              "jquery"
+            ],
+            "exports": "$",
+            "format": "global"
+          }
+        }
+      },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
           "readable-stream": "^2.0.2",
@@ -130,6 +154,9 @@
         "ignore": [
           "test.js"
         ]
+      },
+      "npm:jquery@3.1.1": {
+        "format": "amd"
       },
       "npm:lodash@4.17.4": {
         "map": {

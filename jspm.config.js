@@ -96,11 +96,13 @@ SystemJS.config({
   map: {
     'assert': 'github:jspm/nodelibs-assert@0.2.0-alpha',
     'babel-polyfill': 'npm:babel-polyfill@6.22.0',
+    'bootstrap': 'github:twbs/bootstrap@3.3.7',
     'buffer': 'github:jspm/nodelibs-buffer@0.2.0-alpha',
     'child_process': 'github:jspm/nodelibs-child_process@0.2.0-alpha',
     'constants': 'github:jspm/nodelibs-constants@0.2.0-alpha',
     'crypto': 'github:jspm/nodelibs-crypto@0.2.0-alpha',
     'domain': 'github:jspm/nodelibs-domain@0.2.0-alpha',
+    'es6-promise': 'npm:es6-promise@4.0.5',
     'events': 'github:jspm/nodelibs-events@0.2.0-alpha',
     'fs': 'github:jspm/nodelibs-fs@0.2.0-alpha',
     'http': 'github:jspm/nodelibs-http@0.2.0-alpha',
@@ -111,6 +113,7 @@ SystemJS.config({
     'path': 'github:jspm/nodelibs-path@0.2.0-alpha',
     'process': 'github:jspm/nodelibs-process@0.2.0-alpha',
     'react': 'npm:react@15.4.2',
+    'react-bootstrap': 'npm:react-bootstrap@0.30.7',
     'react-dom': 'npm:react-dom@15.4.2',
     'stream': 'github:jspm/nodelibs-stream@0.2.0-alpha',
     'string_decoder': 'github:jspm/nodelibs-string_decoder@0.2.0-alpha',
@@ -440,6 +443,52 @@ SystemJS.config({
     'npm:sha.js@2.4.8': {
       'map': {
         'inherits': 'npm:inherits@2.0.3'
+      }
+    },
+    'npm:react-bootstrap@0.30.7': {
+      'map': {
+        'classnames': 'npm:classnames@2.2.5',
+        'react-overlays': 'npm:react-overlays@0.6.10',
+        'invariant': 'npm:invariant@2.2.2',
+        'warning': 'npm:warning@3.0.0',
+        'keycode': 'npm:keycode@2.1.8',
+        'uncontrollable': 'npm:uncontrollable@4.0.3',
+        'dom-helpers': 'npm:dom-helpers@2.4.0',
+        'react-prop-types': 'npm:react-prop-types@0.4.0',
+        'babel-runtime': 'npm:babel-runtime@6.22.0'
+      }
+    },
+    'npm:uncontrollable@4.0.3': {
+      'map': {
+        'invariant': 'npm:invariant@2.2.2'
+      }
+    },
+    'npm:react-overlays@0.6.10': {
+      'map': {
+        'classnames': 'npm:classnames@2.2.5',
+        'warning': 'npm:warning@3.0.0',
+        'dom-helpers': 'npm:dom-helpers@2.4.0',
+        'react-prop-types': 'npm:react-prop-types@0.4.0'
+      }
+    },
+    'npm:react-prop-types@0.4.0': {
+      'map': {
+        'warning': 'npm:warning@3.0.0'
+      }
+    },
+    'npm:warning@3.0.0': {
+      'map': {
+        'loose-envify': 'npm:loose-envify@1.3.1'
+      }
+    },
+    'npm:invariant@2.2.2': {
+      'map': {
+        'loose-envify': 'npm:loose-envify@1.3.1'
+      }
+    },
+    'github:twbs/bootstrap@3.3.7': {
+      'map': {
+        'jquery': 'npm:jquery@3.1.1'
       }
     }
   }
