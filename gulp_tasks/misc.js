@@ -16,9 +16,11 @@ function clean() {
   return del([conf.paths.dist, conf.paths.tmp]);
 }
 
+// cache option doesn't work -_-
 function generateManifest() {
-  return gulp.src(conf.path.dist('**/*'))
+  return gulp.src(conf.path.dist('**/*.{css,html,ico,js}'))
     .pipe(appcache({
+      cache: ['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'],
       hash: true,
       network: ['*'],
       preferOnline: false,
