@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, PageHeader } from 'react-bootstrap';
+import { Grid, PageHeader, MenuItem, Nav, Navbar, NavDropdown, NavItem } from 'react-bootstrap';
 
 import * as api from './api';
 import Articles from './components/Articles';
@@ -9,7 +9,41 @@ import SharingButtons from './components/SharingButtons';
 
 const Header = () => {
   return (<header>
-    <PageHeader className='text-center'>
+    <Navbar collapseOnSelect fixedTop inverse>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <a href='#'>CTW</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav pullRight>
+          <NavDropdown title='Associated Websites' id='other-websites'>
+            <MenuItem href='http://ctw.getforge.io/' rel='noopener' target='_blank' active>
+              Clinton, Trump, what's up
+            </MenuItem>
+            <MenuItem href='https://blood-donation-system0.herokuapp.com/' rel='noopener' target='_blank'>
+              Blood Donation System
+            </MenuItem>
+            <MenuItem divider />
+            <MenuItem href='https://ahimta.github.io/fuel-consumption-calculator/' rel='noopener' target='_blank'>
+              أسعار البنزين و المياه و الكهرباء
+            </MenuItem>
+            <MenuItem href='http://ahimta.github.io/saudi-radios' rel='noopener' target='_blank'>
+              الإذاعات السعودية
+            </MenuItem>
+            <MenuItem href='https://donation-web-pla-1479993243743.firebaseapp.com/' rel='noopener' target='_blank'>
+              منصة التبرعات
+            </MenuItem>
+            <MenuItem href='https://ahimta.github.io/bagi/' rel='noopener' target='_blank'>
+              باقي
+            </MenuItem>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+
+    <PageHeader className='text-center' style={{ marginTop: '5em' }}>
       Clinton, Trump, what's up <small>Latest news from the CNN</small>
     </PageHeader>
   </header>);
