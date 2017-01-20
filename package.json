@@ -1,4 +1,8 @@
 {
+  "name": "clinton-trump-whatsup",
+  "version": "1.0.0",
+  "description": "Latest news articles from the CNN about Clinton and Trump",
+  "private": true,
   "devDependencies": {
     "@types/react": "^0.14.39",
     "@types/react-dom": "^0.14.17",
@@ -54,12 +58,29 @@
   },
   "scripts": {
     "build": "gulp",
+    "deploy": "gulp deploy",
+    "install-deps": "npm install && jspm install",
+    "jspm": "jspm",
     "serve": "gulp serve",
     "serve:dist": "gulp serve:dist",
     "test": "gulp test",
-    "test:auto": "gulp test:auto",
-    "jspm": "jspm"
+    "test:auto": "gulp test:auto"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahimta/clinton-trump-whatsup.git"
+  },
+  "keywords": [
+    "Clinton",
+    "Trump",
+    "CNN"
+  ],
+  "author": "Abdullah Alansari",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Ahimta/clinton-trump-whatsup/issues"
+  },
+  "homepage": "https://github.com/Ahimta/clinton-trump-whatsup#readme",
   "jspm": {
     "dependencies": {
       "react-dom": "npm:react-dom@^15.0.1",
