@@ -4,11 +4,13 @@
   "description": "Latest news articles from the CNN about Clinton and Trump",
   "private": true,
   "devDependencies": {
+    "@types/es6-promise": "0.0.32",
     "@types/es6-shim": "^0.31.32",
     "@types/jasmine": "^2.5.38",
     "@types/node": "^0.0.2",
     "@types/react": "^0.14.39",
     "@types/react-addons-test-utils": "^0.14.15",
+    "@types/react-bootstrap": "0.0.42",
     "@types/react-dom": "^0.14.17",
     "autoprefixer": "^6.2.3",
     "babel-eslint": "^6.0.2",
